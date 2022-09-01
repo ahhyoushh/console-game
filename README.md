@@ -1,2 +1,2 @@
-#Timepass mfs
+# Timepass mfs
 Simple console game
