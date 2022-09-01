@@ -1,2 +1,2 @@
-# klux-game-bot
-Only game login done!
+#Timepass mfs
+Simple console game
