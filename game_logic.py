@@ -54,10 +54,10 @@ print("\033[91mEXPECT ERRORS!!!\033[0m")
 print()
 print()
 print("Please Wait...")
-time.sleep(3)
+time.sleep(2)
 while Game == Running:
     os.system("clear")
-    s_invalid = [21, 22, 23, 24, 25]
+    s_invalid = [16, 17, 18, 19, 20]
     w_invalid = [1, 2, 3, 4, 5]
     player_pos = board.index(player)
     DrawBoard()
