@@ -51,7 +51,7 @@ print("\033[91mEXPECT ERRORS!!!\033[0m")
 print()
 print()
 print("Please Wait...")
-time.sleep(5)
+time.sleep(3)
 while Game == Running:
     os.system("clear")
     s_valid = [1, 2, 3, 4, 5, 6]
