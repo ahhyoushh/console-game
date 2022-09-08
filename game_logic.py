@@ -1,7 +1,8 @@
 import os    
 import time    
 import random
-board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ']    
+import getch
+board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']    
    
 ########win Flags##########    
 Win = 1    
@@ -25,13 +26,17 @@ COLOR = {
 
 #This Function Draws Game Board    
 def DrawBoard():
-    print(f" ___ ___ ___              Points: \033[91m{points}\033[0m")  
-    print("| %c | %c | %c |" % (board[1],board[2],board[3]))    
-    print("|___|___|___|")    
-    print("| %c | %c | %c |" % (board[4],board[5],board[6]))    
-    print("|___|___|___|")    
-    print("| %c | %c | %c |" % (board[7],board[8],board[9]))    
-    print("|___|___|___|")    
+    print(f" ___ ___ ___ ___ ___   Points: \033[91m{points}\033[0m")  
+    print("| %c | %c | %c | %c | %c |" % (board[1],board[2],board[3],board[4], board[5]))    
+    print("|___|___|___|___|___|")    
+    print("| %c | %c | %c | %c | %c |" % (board[6],board[7],board[8], board[9], board[10]))    
+    print("|___|___|___|___|___|")    
+    print("| %c | %c | %c | %c | %c |" % (board[11],board[12],board[13],board[14], board[15]))    
+    print("|___|___|___|___|___|")    
+    print("| %c | %c | %c | %c | %c |" % (board[16],board[17],board[18],board[19], board[20]))    
+    print("|___|___|___|___|___|")  
+    print("| %c | %c | %c | %c | %c |" % (board[21],board[22],board[23],board[24], board[25]))    
+    print("|___|___|___|___|___|")
 
 
 def spawn_nigga():
@@ -54,18 +59,19 @@ print("Please Wait...")
 time.sleep(3)
 while Game == Running:
     os.system("clear")
-    s_valid = [1, 2, 3, 4, 5, 6]
-    w_valid = [4, 5, 6, 7, 8, 9]
+    s_invalid = [21, 22, 23, 24, 25]
+    w_invalid = [1, 2, 3, 4, 5]
     player_pos = board.index(player)
     DrawBoard()
     if player_pos == nigga_pos:
         points+=1
         spawn_nigga()
-    choice = str(input("\033[94mInput:\033[0m"))
+    print("\033[94mInput:\033[0m", end=" ", flush=True)
+    choice = getch.getch()
     if choice == 'q':
         exit()
     elif choice == 'd':
-        if player_pos != 9:
+        if player_pos != 25:
             board[player_pos] = ' '
             board[player_pos+1] = player
     elif choice == 'a':
@@ -73,11 +79,11 @@ while Game == Running:
             board[player_pos] = ' '
             board[player_pos-1] = player
     elif choice == 'w':
-        if player_pos in w_valid:
+        if player_pos not in w_invalid:
             board[player_pos] = ' '
-            board[player_pos-3] = player
+            board[player_pos-5] = player
     elif choice == 's':
-        if player_pos in s_valid:
+        if player_pos not in s_invalid:
             board[player_pos] = ' '
-            board[player_pos+3] = player
+            board[player_pos+5] = player
 
