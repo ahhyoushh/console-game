@@ -2,7 +2,7 @@ import os
 import time    
 import random
 import getch
-board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ',' ']    
+board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ',' ',' ']    
    
 ########win Flags##########    
 Win = 1    
@@ -35,8 +35,6 @@ def DrawBoard():
     print("|___|___|___|___|___|")    
     print("| %c | %c | %c | %c | %c |" % (board[16],board[17],board[18],board[19], board[20]))    
     print("|___|___|___|___|___|")  
-    print("| %c | %c | %c | %c | %c |" % (board[21],board[22],board[23],board[24], board[25]))    
-    print("|___|___|___|___|___|")
 
 
 def spawn_nigga():
