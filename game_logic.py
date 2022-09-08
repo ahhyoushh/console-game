@@ -69,7 +69,7 @@ while Game == Running:
     if choice == 'q':
         exit()
     elif choice == 'd':
-        if player_pos != 25:
+        if player_pos != 20:
             board[player_pos] = ' '
             board[player_pos+1] = player
     elif choice == 'a':
