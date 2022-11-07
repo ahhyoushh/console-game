@@ -2,6 +2,7 @@ import os
 import time    
 import random
 import getch
+from rpc import run_rpc
 board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ',' ',' ']    
    
 ########win Flags##########    
@@ -53,7 +54,7 @@ def spawn_nigga():
         DrawBoard()        
 
 spawn_nigga()
-
+run_rpc()
 print("\033[95mKlux game designed by ahhyoushh!\033[0m")
 print("\033[91mEXPECT ERRORS!!!\033[0m")
 print()
