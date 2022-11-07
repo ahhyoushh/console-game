@@ -1,7 +1,8 @@
 import os    
-import time    
+import time
 import random
 import getch
+import threading
 from rpc import run_rpc
 board = ['',' ',' ',' ',' ','<',' ',' ',' ',' ', ' ', ' ', ' ', ' ', ' ',' ',' ',' ',' ',' ',' ']    
    
@@ -54,12 +55,14 @@ def spawn_nigga():
         DrawBoard()        
 
 spawn_nigga()
-run_rpc()
+
 print("\033[95mKlux game designed by ahhyoushh!\033[0m")
 print("\033[91mEXPECT ERRORS!!!\033[0m")
 print()
 print()
 print("Please Wait...")
+rpc_thread = threading.Thread(target=run_rpc)
+rpc_thread.start()
 time.sleep(1)
 while Game == Running:
     os.system("clear")
