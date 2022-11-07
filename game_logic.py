@@ -44,8 +44,13 @@ def spawn_nigga():
         if count > 1:
             empty_space = count
     nigga_pos = random.randint(1, empty_space)
-    if board[nigga_pos] == ' ':
+    if nigga_pos != ' ':
+        nigga_pos = random.randint(1, empty_space)
         board[nigga_pos] = nigga
+    else:
+        board[nigga_pos] = nigga
+        os.system('clear')
+        DrawBoard()        
 
 spawn_nigga()
 
@@ -54,7 +59,7 @@ print("\033[91mEXPECT ERRORS!!!\033[0m")
 print()
 print()
 print("Please Wait...")
-time.sleep(2)
+time.sleep(1)
 while Game == Running:
     os.system("clear")
     s_invalid = [16, 17, 18, 19, 20]
